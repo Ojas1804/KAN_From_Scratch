@@ -1,4 +1,3 @@
-# https://chatgpt.com/s/t_6a24163b780c81919d833c13b3739d8f
 import numpy as np
 from Layer import Layer
 from KnotGrid import KnotGrid
