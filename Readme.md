@@ -17,15 +17,19 @@ pip install -r requirements.txt
 ### Model Performance
 <!-- Images in results folder -->
 XOR:
+
 ![XOR](results/xor.png)
 
 Multi-class Classification:
+
 ![Multi-class Classification](results/multi_class.png)
 
 Regression:
+
 ![Regression](results/regression.png)
 
 Polynomial:
+
 ![Polynomial](results/polynomial.png)
 
 ### Updates
