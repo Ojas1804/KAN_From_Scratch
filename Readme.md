@@ -4,9 +4,9 @@ KAN stands for Kolmogorov-Arnold Network. It is a type of neural network that us
 
 **To understand KANs, you can read about them here:**
 
-[Kolmogorov-Arnold Networks: Mathematical Foundations](https://www.s-tronomic.in/post/118)
+- [Kolmogorov-Arnold Networks: Mathematical Foundations](https://www.s-tronomic.in/post/118)
 
-[Kolmogorov-Arnold Networks: Practical Implementation and MLP comparison](https://www.s-tronomic.in/post/119)
+- [Kolmogorov-Arnold Networks: Practical Implementation and MLP comparison](https://www.s-tronomic.in/post/119)
 
 ### Installation
 
