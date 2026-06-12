@@ -8,7 +8,13 @@ To understand KANs, you can read about them here:
 
 ### Installation
 
-(Scikit-learn is not required if oyu are not planning to run TestMultiClassification.py. Only using it to get multi class dataset)
+If you plan to use KAN without running `TestMultiClassification.py` then install only numpy:
+
+```bash
+pip install numpy
+```
+
+Scikit-learn is not required if you are not planning to run `TestMultiClassification.py`. Only using it to get multi class dataset. If you plan to run the test file then:
 
 ```bash
 pip install -r requirements.txt
