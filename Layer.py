@@ -1,4 +1,5 @@
 import numpy as np
+from KnotGrid import KnotGrid
 
 class Layer:
     def __init__(self, n_in, n_out, polynomial_degree, grid_size):
@@ -13,3 +14,4 @@ class Layer:
         self.basis_matrices = None
         self.basis_derivative_matrices = None
         self.output = None
+        self.knot_grids = [KnotGrid(polynomial_degree, grid_size) for _ in range(n_in)]

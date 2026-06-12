@@ -5,22 +5,36 @@ class KnotGrid:
     def __init__(self, polynomial_degree, grid_size):
         self.polynomial_degree = polynomial_degree
         self.grid_size = grid_size
-        self.num_basis_func = polynomial_degree + grid_size
-    
-    # knots = (delta)/G
-    def create_knot_grid(self, inputs):
-        x_min = min(inputs)
-        x_max = max(inputs)
+        self.num_basis_func = polynomial_degree + grid_size - 1
+        self.knots = None
 
+    def fit(self, inputs):
+        x_min = float(np.min(inputs))
+        x_max = float(np.max(inputs))
+        if x_min == x_max:
+            x_min -= 1.0
+            x_max += 1.0
+        self._build_knots(x_min, x_max)
+
+    def _build_knots(self, x_min, x_max):
         grid_points = np.linspace(x_min, x_max, num=self.grid_size).tolist()
-        self.knots = list(itertools.chain([x_min]*self.polynomial_degree,
-                                                grid_points,
-                                                [x_max]*self.polynomial_degree))
+        self.knots = list(itertools.chain(
+            [x_min] * self.polynomial_degree,
+            grid_points,
+            [x_max] * self.polynomial_degree
+        ))
+
+    def transform(self, inputs):
         self.knot_grid = np.array([self.__cox_deboor(x) for x in inputs])
         self.knot_grid_derivative = np.array([
             self.cox_deboor_derivative(x, self.polynomial_degree)
             for x in inputs
         ])
+
+    # knots = (delta)/G
+    def create_knot_grid(self, inputs):
+        self.fit(inputs)
+        self.transform(inputs)
     
     def __cox_deboor(self, x, degree=None):
         if degree is None:
